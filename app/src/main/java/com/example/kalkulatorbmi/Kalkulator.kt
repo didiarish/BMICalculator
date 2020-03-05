@@ -9,6 +9,7 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.Toast
 import androidx.core.app.ShareCompat
+import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
@@ -66,6 +67,8 @@ class Kalkulator : Fragment() {
                 hasilBMI = String.format("%.1f", hasil)
 
                 if (binding.rbPria.isChecked) {
+                    binding.button2.visibility = View.VISIBLE
+                    binding.button3.visibility = View.VISIBLE
                     gender = binding.rbPria.text.toString()
                     if (hasilBMI.toDouble() < 20.50) {
                         binding.textView.text = hasilBMI
@@ -87,6 +90,8 @@ class Kalkulator : Fragment() {
                         binding.textView2.setTextColor(color)
                     }
                 } else if (binding.rbWanita.isChecked) {
+                    binding.button2.visibility = View.VISIBLE
+                    binding.button3.visibility = View.VISIBLE
                     gender = binding.rbWanita.text.toString()
                     if (hasilBMI.toDouble() < 18.50) {
                         binding.textView.text = hasilBMI
@@ -119,8 +124,6 @@ class Kalkulator : Fragment() {
                 binding.textView.text = null
                 binding.textView2.text = null
             }
-
-
         }
 
         binding.button2.setOnClickListener {
