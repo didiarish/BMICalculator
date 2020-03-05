@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/kalkulator">
+
+    <fragment
+        android:id="@+id/kalkulator"
+        android:name="com.example.kalkulatorbmi.Kalkulator"
+        android:label="Kalkulator BMI"
+        tools:layout="@layout/fragment_kalkulator">
+        <action
+            android:id="@+id/action_kalkulator_to_ideal"
+            app:destination="@id/ideal" />
+        <action
+            android:id="@+id/action_kalkulator_to_gemuk"
+            app:destination="@id/gemuk" />
+        <action
+            android:id="@+id/action_kalkulator_to_kurus"
+            app:destination="@id/kurus" />
+    </fragment>
+    <fragment
+        android:id="@+id/ideal"
+        android:name="com.example.kalkulatorbmi.Ideal"
+        android:label="Ideal"
+        tools:layout="@layout/fragment_ideal"/>
+    <fragment
+        android:id="@+id/gemuk"
+        android:name="com.example.kalkulatorbmi.Gemuk"
+        android:label="Gemuk"
+        tools:layout="@layout/fragment_gemuk"/>
+    <fragment
+        android:id="@+id/kurus"
+        android:name="com.example.kalkulatorbmi.Kurus"
+        android:label="Kurus"
+        tools:layout="@layout/fragment_kurus"/>
+    <fragment
+        android:id="@+id/about"
+        android:name="com.example.kalkulatorbmi.About"
+        android:label="About"
+        tools:layout="@layout/fragment_about"/>
+</navigation>
